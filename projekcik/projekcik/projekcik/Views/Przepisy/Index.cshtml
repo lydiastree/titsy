@@ -1,0 +1,52 @@
+﻿@model IEnumerable<projekcik.Models.Przepis>
+
+@{
+    ViewBag.Title = "Słodkie przepisy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    @Html.ActionLink("Dodaj swój przepis", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Skladniki)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Wykonanie)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Kalorie)
+        </td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Skladniki)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Wykonanie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kalorie)
+            </td>
+            <td>
+                @Html.ActionLink("Usuń", "Delete")
+            </td>
+        </tr>
+    }
+
+
+</table>

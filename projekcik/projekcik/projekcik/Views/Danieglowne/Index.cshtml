@@ -1,0 +1,66 @@
+﻿@model IEnumerable <projekcik.Models.Danieglowne>
+
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Danie główne</h2>
+
+<p>
+    @Html.ActionLink("Dodaj swoją propozycję dania głównego", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Skladniki)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Wykonanie)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Iloscporcji)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Iloscporcji)
+        </td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nazwa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Skladniki)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Wykonanie)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Iloscporcji)
+    </td>
+    <td>
+        @Html.ActionLink("Usuń", "Delete")
+    </td>
+    <td>
+        @Html.ActionLink("Dodaj komentarz", "AddingCom")
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nazwa)
+    </td>
+</tr>
+    }
+
+
+</table>
+

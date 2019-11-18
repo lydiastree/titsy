@@ -1,0 +1,24 @@
+﻿@model projekcik.Models.Danieglowne
+
+@{
+    ViewBag.Title = "Dodaj danie główne";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+<p>Tutaj możesz wprowadzić nowy przepis!</p>
+<p>Uwaga! Wszystkie pola muszą być wypełnione, w innym wypadku przepis nie zostanie dodany</p>
+<form method="post">
+    Nazwa:
+    @Html.EditorFor(m => m.Nazwa)
+    Składniki:
+    @Html.EditorFor(m => m.Skladniki)
+    Wykonanie:
+    @Html.EditorFor(m => m.Wykonanie)
+    Ilość porcji:
+    @Html.EditorFor(m => m.Iloscporcji)
+    <input type="submit" onclick="location.href='Index'"  value = "Dodaj"/>
+</form>
+

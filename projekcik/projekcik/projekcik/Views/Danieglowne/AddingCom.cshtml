@@ -1,0 +1,20 @@
+﻿@model projekcik.Models.Comment
+
+@{
+    ViewBag.Title = "Dodaj komentarz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>Dodaj komentarz do potrway</p>
+<form method="post">
+    Nazwa użytkownika:
+    @Html.EditorFor(m => m.Nazwa)
+    Komentarz:
+    @Html.EditorFor(m => m.Komentarz)
+    <input type="button" onclick="location.href='Index'"  value = "Dodaj"/>
+    @*<td>
+            @Html.ActionLink("Dodaj", "Delete")
+      </td>*@
+</form>
+ 
